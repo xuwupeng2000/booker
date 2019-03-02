@@ -16,7 +16,6 @@ gem 'turbolinks', '~> 5'
 gem 'react-rails'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
-gem 'bootsnap', '>= 1.1.0', require: false
 gem 'hashie'
 
 gem 'simple_form'
