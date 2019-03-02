@@ -306,4 +306,6 @@ Devise.setup do |config|
     ]
     jwt.expiration_time = 14.days.to_i
   end
+
+  config.omniauth :facebook, ENV.fetch('FB_APP_ID', ''), ENV.fetch('FB_APP_SECRET', '')
 end

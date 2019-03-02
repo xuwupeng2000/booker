@@ -1,15 +1,22 @@
 # frozen_string_literal: true
 
 class Api::V1::SessionsController < Devise::SessionsController
-  respond_to :json
+  skip_before_action :verify_signed_out_user
 
-  private
-
-  def respond_with(resource, _opts = {})
-    render json: resource
+  # POST /resource/sign_in
+  def create
+    @user = warden.authenticate(auth_options)
+    if @user
+      sign_in(resource_name, @user)
+      render json: UserSerializer.new(@user).serializable_hash
+    else
+      head 401
+    end
   end
 
-  def respond_to_on_destroy
-    head :no_content
+  # DELETE /resource/sign_out
+  def destroy
+    signed_out = (Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name))
+    head 200
   end
 end

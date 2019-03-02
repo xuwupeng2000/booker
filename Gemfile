@@ -31,6 +31,7 @@ gem 'cancancan', '~> 2.0'
 gem 'devise'
 gem 'devise-jwt', '~> 0.5.8'
 gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 gem 'fast_jsonapi'
@@ -39,6 +40,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -55,7 +57,7 @@ group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
-  gem 'pry-rails'
+  gem "json_matchers"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
