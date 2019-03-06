@@ -3,6 +3,7 @@ class Booking < ApplicationRecord
 
   belongs_to :user
   belongs_to :barber
+  belongs_to :shop
 
   validates :booked_at, presence: true
   validate :booked_today_or_tmw

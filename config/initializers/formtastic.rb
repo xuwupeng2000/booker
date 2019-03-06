@@ -4,7 +4,7 @@
 # Formtastic::FormBuilder.default_text_field_size = 50
 
 # Set the default text area height when input is a text. Default is 20.
-# Formtastic::FormBuilder.default_text_area_height = 5
+Formtastic::FormBuilder.default_text_area_height = 5
 
 # Set the default text area width when input is a text. Default is nil.
 # Formtastic::FormBuilder.default_text_area_width = 50
@@ -110,4 +110,4 @@ Formtastic::FormBuilder.action_class_finder = Formtastic::ActionClassFinder
 # Formtastic::FormBuilder.action_namespaces = [ ::Object, ::MyActionsModule, ::Formtastic::Actions ]
 
 # Which columns to skip when automatically rendering a form without any fields specified.
-# Formtastic::FormBuilder.skipped_columns = [:created_at, :updated_at, :created_on, :updated_on, :lock_version, :version]
+Formtastic::FormBuilder.skipped_columns = [:created_at, :updated_at, :created_on, :updated_on, :lock_version, :version, :lat, :lng, :aasm_state]
