@@ -1,4 +1,5 @@
 class Barber < ApplicationRecord
+  include Rails.application.routes.url_helpers
   has_one_attached :avatar
 
   # Include default devise modules. Others available are:
@@ -8,4 +9,11 @@ class Barber < ApplicationRecord
   has_many :barbers, through: :bookings
   belongs_to :shop
   validates :name, presence: true
+
+  def avatar_url
+    default_url_options[:host] = "localhost"
+    default_url_options[:port] = 3000
+
+    rails_blob_url(avatar) if avatar.attached?
+  end
 end
