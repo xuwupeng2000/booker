@@ -19,6 +19,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'hashie'
 
 gem 'simple_form'
+gem 'formtastic', '~> 3.0'
+
 gem 'apipie-rails'
 gem 'will_paginate'
 gem 'premailer-rails'
@@ -35,6 +37,9 @@ gem 'omniauth-facebook'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 gem 'fast_jsonapi'
+
+gem 'bootstrap', '~> 4.3.1'
+gem 'octicons_helper'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

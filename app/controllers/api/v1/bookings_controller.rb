@@ -9,10 +9,10 @@ class Api::V1::BookingsController < ApplicationController
   end
 
   def update
-    render json: {}, status: 204
+    render json: {}
   end
 
   def create
-    render json: {}, status: 204
+    render json: {}
   end
 end

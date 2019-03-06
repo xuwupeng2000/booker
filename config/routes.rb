@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   apipie
 
+  resources :shops
+  resources :barbers
+  resources :bookings
+
   devise_for :users, controllers: { sessions: 'api/v1/sessions', registrations: 'api/v1/registrations' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   scope :api do
@@ -10,4 +14,5 @@ Rails.application.routes.draw do
     end
   end
 
+  root 'shops#index'
 end

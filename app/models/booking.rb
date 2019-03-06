@@ -4,7 +4,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :barber
 
-  validates_presence_of :booked_at
+  validates :booked_at, presence: true
   validate :booked_today_or_tmw
 
   aasm do

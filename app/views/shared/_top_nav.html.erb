@@ -1,0 +1,13 @@
+<div class="flex">
+  <ul class="nav justify-content-center nav-tabs">
+    <li class="nav-item">
+      <%= link_to "Shops", shops_path, class: "nav-link #{controller_name == 'shops' ? 'active' : nil}" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Bookings", bookings_path, class: "nav-link #{controller_name == 'bookings' ? 'active' : nil}" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Barbers", barbers_path, class: "nav-link #{controller_name == 'barbers' ? 'active' : nil}" %>
+    </li>
+  </ul>
+</div>
