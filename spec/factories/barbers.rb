@@ -1,3 +1,5 @@
+include ActionDispatch::TestProcess
+
 FactoryBot.define do
   factory :barber do
     shop
@@ -10,5 +12,9 @@ FactoryBot.define do
     description {Faker::Food.dish}
     reset_password_token { Faker::Crypto.md5 }
     password { "passpass" }
+
+    trait :with_avatar do
+      avatar { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'avatar.png'), 'image/png') }
+    end
   end
 end
