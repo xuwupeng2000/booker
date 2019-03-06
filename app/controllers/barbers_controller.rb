@@ -1,6 +1,7 @@
 class BarbersController < ApplicationController
   def index
     @barbers = Barber.includes(:shop).all
+      .order(updated_at: :desc)
   end
 
   def update

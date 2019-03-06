@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.includes(:shop).all
+      .order(updated_at: :desc)
   end
 
   def update
