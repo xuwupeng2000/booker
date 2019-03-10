@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
   apipie
 
-  resources :shops
-  resources :barbers
-  resources :bookings
+  namespace :admin do
+    resources :shops
+    resources :barbers
+    resources :bookings
+  end
+
+  resources :shops, only: %i(show) do
+    resources :barbers
+    resources :bookings
+    resources :services
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api do

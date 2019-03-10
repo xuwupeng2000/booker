@@ -13,8 +13,8 @@
         <tr>
           <td><%= b.name %></td>
           <td><%= b.description %></td>
-          <td><%= link_to b.shop.name, shop_path(b.shop) %></td>
-          <td><%= link_to "View", barber_path(b) %></td>
+          <td><%= link_to b.shop.name, admin_shop_path(b.shop) %></td>
+          <td><%= link_to "View", admin_barber_path(b) %></td>
         </tr>
       <% end %>
     </table>

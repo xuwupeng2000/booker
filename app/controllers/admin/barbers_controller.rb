@@ -1,4 +1,4 @@
-class BarbersController < ApplicationController
+class Admin::BarbersController < ApplicationController
   def index
     @barbers = Barber.includes(:shop).all
       .order(updated_at: :desc)
@@ -8,7 +8,7 @@ class BarbersController < ApplicationController
     @barber = Barber.find(params[:id])
 
     if @barber.update(barber_params)
-      redirect_to barbers_path, success: t("barber.update.success")
+      redirect_to admin_barbers_path, success: t("barber.update.success")
     else
       render :edit
     end
@@ -18,7 +18,7 @@ class BarbersController < ApplicationController
     @barber = Barber.new(barber_params)
 
     if @barber.save
-      redirect_to barbers_path, success: t("barber.create.success")
+      redirect_to admin_barbers_path, success: t("barber.create.success")
     else
       render :new
     end

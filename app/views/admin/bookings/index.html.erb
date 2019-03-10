@@ -16,7 +16,7 @@
           <td><%= s.booked_at.strftime("%H:%M %F") %></td>
           <td><%= s.shop.address %></td>
           <td class="ttu"><%= s.aasm_state %></td>
-          <td><%= link_to "View", booking_path(s) %></td>
+          <td><%= link_to "View", admin_booking_path(s) %></td>
         </tr>
       <% end %>
     </table>

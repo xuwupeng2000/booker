@@ -1,4 +1,4 @@
-class BookingsController < ApplicationController
+class Admin::BookingsController < ApplicationController
   def index
     @bookings = Booking.includes(:shop).all
       .order(updated_at: :desc)
@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
 
     if @booking.update(booking_params)
-      redirect_to bookings_path, success: t("booking.update.success")
+      redirect_to admin_bookings_path, success: t("booking.update.success")
     else
       render :edit
     end
@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
 
     if @booking.save
-      redirect_to bookings_path, success: t("booking.create.success")
+      redirect_to admin_bookings_path, success: t("booking.create.success")
     else
       render :new
     end

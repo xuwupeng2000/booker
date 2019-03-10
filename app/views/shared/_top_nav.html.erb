@@ -1,13 +1,13 @@
 <div class="flex mt3">
   <ul class="nav justify-content-center nav-tabs">
     <li class="nav-item">
-      <%= link_to "Shops", shops_path, class: "nav-link #{controller_name == 'shops' ? 'active' : nil}" %>
+      <%= link_to "Shops", admin_shops_path, class: "nav-link #{controller_name == 'shops' ? 'active' : nil}" %>
     </li>
     <li class="nav-item">
-      <%= link_to "Bookings", bookings_path, class: "nav-link #{controller_name == 'bookings' ? 'active' : nil}" %>
+      <%= link_to "Bookings", admin_bookings_path, class: "nav-link #{controller_name == 'bookings' ? 'active' : nil}" %>
     </li>
     <li class="nav-item">
-      <%= link_to "Barbers", barbers_path, class: "nav-link #{controller_name == 'barbers' ? 'active' : nil}" %>
+      <%= link_to "Barbers", admin_barbers_path, class: "nav-link #{controller_name == 'barbers' ? 'active' : nil}" %>
     </li>
   </ul>
 </div>
