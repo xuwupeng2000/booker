@@ -7,6 +7,7 @@ class Barber < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :barbers, through: :bookings
+  has_many :services
   belongs_to :shop
   validates :name, presence: true
 

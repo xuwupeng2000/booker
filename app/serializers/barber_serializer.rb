@@ -3,8 +3,9 @@ class BarberSerializer
 
   attributes :name, :description
   belongs_to :shop
+  has_many :services
 
-  link :avatar_url do |barber|
+  attribute :avatar_url do |barber|
     barber.avatar_url
   end
 end

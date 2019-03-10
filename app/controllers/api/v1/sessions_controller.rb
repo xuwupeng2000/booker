@@ -19,4 +19,10 @@ class Api::V1::SessionsController < Devise::SessionsController
     signed_out = (Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name))
     head 200
   end
+
+  private
+
+  def sign_in_params
+    params.require(:user).permit!
+  end
 end

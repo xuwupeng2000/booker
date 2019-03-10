@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_06_022359) do
+ActiveRecord::Schema.define(version: 2019_03_10_075421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,9 +59,22 @@ ActiveRecord::Schema.define(version: 2019_03_06_022359) do
     t.datetime "updated_at", null: false
     t.string "aasm_state"
     t.bigint "shop_id"
+    t.bigint "service_id"
     t.index ["barber_id"], name: "index_bookings_on_barber_id"
+    t.index ["service_id"], name: "index_bookings_on_service_id"
     t.index ["shop_id"], name: "index_bookings_on_shop_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "USD", null: false
+    t.bigint "barber_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["barber_id"], name: "index_services_on_barber_id"
   end
 
   create_table "shops", force: :cascade do |t|
