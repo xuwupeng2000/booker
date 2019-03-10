@@ -1,12 +1,13 @@
-class Admin::BookingsController < ApplicationController
-  layout 'admin'
+class BookingsController < ApplicationController
+  before_action :set_shop
+
   def index
-    @bookings = Booking.includes(:shop).all
+    @bookings = @shop.bookings
       .order(updated_at: :desc)
   end
 
   def update
-    @booking = Booking.find(params[:id])
+    @booking = @shop.bookings.find(params[:id])
 
     if @booking.update(booking_params)
       redirect_to admin_bookings_path, success: t("booking.update.success")
@@ -16,7 +17,7 @@ class Admin::BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = @shop.bookings.build(booking_params)
 
     if @booking.save
       redirect_to admin_bookings_path, success: t("booking.create.success")
@@ -26,19 +27,19 @@ class Admin::BookingsController < ApplicationController
   end
 
   def edit
-    @booking = Booking.find(params[:id])
+    @booking = @shop.bookings.find(params[:id])
   end
 
   def show
-    @booking = Booking.find(params[:id])
+    @booking = @shop.bookings.find(params[:id])
   end
 
   def new
-    @booking = Booking.new
+    @booking = @shop.bookings.build
   end
 
   def destroy
-    @booking = Booking.find(params[:id])
+    @booking = @shop.bookings.find(params[:id])
     @booking.destroy!
   end
 
@@ -47,5 +48,4 @@ class Admin::BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit!
   end
-
 end

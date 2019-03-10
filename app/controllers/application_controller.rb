@@ -22,4 +22,10 @@ class ApplicationController < ActionController::Base
       ]
     }, status: :bad_request
   end
+
+  private
+
+  def set_shop
+    @shop = Shop.find(params[:shop_id])
+  end
 end

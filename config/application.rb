@@ -24,7 +24,7 @@ module Booker
       g.test_framework  :rspec, fixture: false
       g.stylesheets     false
       g.javascripts     false
-      g.helpers         false
+      g.helper          false
     end
   end
 end

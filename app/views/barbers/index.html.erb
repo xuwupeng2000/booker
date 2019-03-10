@@ -1,0 +1,22 @@
+<div class="row mt3">
+  <div class="col">
+    <h3>Barbers</h3>
+
+    <table class="table table-striped">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Shop</th>
+        <th></th>
+      </tr>
+      <% @barbers.each do |b| %>
+        <tr>
+          <td><%= b.name %></td>
+          <td><%= b.description %></td>
+          <td><%= link_to b.shop.name, admin_shop_path(b.shop) %></td>
+          <td><%= link_to "View", admin_barber_path(b) %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,12 +1,13 @@
-class Admin::BarbersController < ApplicationController
-  layout 'admin'
+class BarbersController < ApplicationController
+  before_action :set_shop
+
   def index
-    @barbers = Barber.includes(:shop).all
+    @barbers = @shop.barbers.includes(:shop).all
       .order(updated_at: :desc)
   end
 
   def update
-    @barber = Barber.find(params[:id])
+    @barber = @shop.barbers.find(params[:id])
 
     if @barber.update(barber_params)
       redirect_to admin_barbers_path, success: t("barber.update.success")
@@ -16,7 +17,7 @@ class Admin::BarbersController < ApplicationController
   end
 
   def create
-    @barber = Barber.new(barber_params)
+    @barber = @shop.barbers.build(barber_params)
 
     if @barber.save
       redirect_to admin_barbers_path, success: t("barber.create.success")
@@ -26,19 +27,19 @@ class Admin::BarbersController < ApplicationController
   end
 
   def edit
-    @barber = Barber.find(params[:id])
+    @barber = @shop.barbers.find(params[:id])
   end
 
   def show
-    @barber = Barber.find(params[:id])
+    @barber = @shop.barbers.find(params[:id])
   end
 
   def new
-    @barber = Barber.new
+    @barber = @shop.barbers.build
   end
 
   def destroy
-    @barber = Barber.find(params[:id])
+    @barber = @shop.barbers.find(params[:id])
     @barber.destroy!
   end
 
