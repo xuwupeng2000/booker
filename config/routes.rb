@@ -7,9 +7,8 @@ Rails.application.routes.draw do
     resources :bookings
   end
 
-
   devise_for :users, controllers: { sessions: 'sessions', registrations: 'registrations' }
-  resources :shops, only: %i(show) do
+  resources :shops do
     resources :barbers
     resources :bookings
     resources :services
@@ -25,5 +24,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'welcome#show'
+  root 'shops#index'
 end

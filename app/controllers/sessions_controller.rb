@@ -14,6 +14,7 @@ class SessionsController < Devise::SessionsController
     @user = warden.authenticate(auth_options)
     if @user
       sign_in(resource_name, @user)
+      redirect_to shops_path
     else
       flash[:error] = "Please check you email and password"
       redirect_to root_path

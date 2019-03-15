@@ -1,4 +1,5 @@
-<% flash.each do |key, value| %>
-  <%= content_tag :div, value, class: "flash alert w-100 flex justify-center items-center #{flash_key_mapping(key)} br0" %>
-  <div class="alert alert-danger" role="alert">
-<% end %>
+<div id="flash">
+  <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "flash alert w-100 flex justify-center items-center #{flash_key_mapping(key)} br0" %>
+  <% end %>
+</div>
