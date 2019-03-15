@@ -7,12 +7,14 @@ Rails.application.routes.draw do
     resources :bookings
   end
 
+
+  devise_for :users, controllers: { sessions: 'sessions', registrations: 'registrations' }
   resources :shops, only: %i(show) do
     resources :barbers
     resources :bookings
     resources :services
   end
-
+  resource :welcome, only: %i(show)
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api do
@@ -23,5 +25,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'shops#index'
+  root 'welcome#show'
 end
