@@ -1,7 +1,12 @@
 <div class="row mt3">
-  <div class="col">
+  <div class="col-12">
     <h3>Barbers</h3>
     <p>Shop owner should be able to manage barbers from there</p>
+  </div>
+  <div class="col-12">
+    <div class="flex justify-end mv3">
+      <%= link_to 'Add', new_shop_barber_path(@shop), class: "btn btn-outline-primary" %>
+    </div>
 
     <table class="table table-striped">
       <tr>
@@ -15,7 +20,7 @@
           <td><%= b.name %></td>
           <td><%= b.description %></td>
           <td><%= link_to b.shop.name, admin_shop_path(b.shop) %></td>
-          <td><%= link_to "View", admin_barber_path(b) %></td>
+          <td><%= link_to "View", shop_barber_path(@shop, b) %></td>
         </tr>
       <% end %>
     </table>

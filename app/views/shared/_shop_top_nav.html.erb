@@ -1,20 +1,15 @@
 <div class="flex mt3">
-    <ul class="nav justify-content-center nav-tabs">
-      <% if @shop && @shop.persisted? %>
-          <li class="nav-item">
-            <%= link_to "Home", shop_path(@shop), class: "nav-link #{controller_name == 'shops' ? 'active' : nil}" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Bookings", shop_bookings_path(@shop), class: "nav-link #{controller_name == 'bookings' ? 'active' : nil}" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Barbers", shop_barbers_path(@shop), class: "nav-link #{controller_name == 'barbers' ? 'active' : nil}" %>
-          </li>
-      <% end %>
-      <% if current_user %>
-        <li class="nav-item">
-          <%= link_to "Log out", destroy_user_session_path(@shop), method: :delete, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
+  <ul class="nav justify-content-center nav-tabs">
+    <% if @shop && @shop.persisted? %>
+      <li class="nav-item">
+        <%= link_to "Home", shop_path(@shop), class: "nav-link #{controller_name == 'shops' ? 'active' : nil}" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Bookings", shop_bookings_path(@shop), class: "nav-link #{controller_name == 'bookings' ? 'active' : nil}" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Barbers", shop_barbers_path(@shop), class: "nav-link #{controller_name == 'barbers' ? 'active' : nil}" %>
+      </li>
+    <% end %>
+  </ul>
 </div>

@@ -1,4 +1,6 @@
-<%= semantic_form_for [:admin, @booking] do |f| %>
-  <%= f.inputs %>
+<%= semantic_form_for [@shop, @booking] do |f| %>
+  <%= f.input :barber_id, as: :select, collection: @shop.barbers %>
+  <%= f.input :service_id, as: :select, collection: @shop.services %>
+  <%= f.input :booked_at %>
   <%= f.actions %>
 <% end %>

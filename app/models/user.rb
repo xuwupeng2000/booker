@@ -9,4 +9,8 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :barbers, through: :bookings
 
+  def admin?
+    true
+  end
+
 end

@@ -1,12 +1,12 @@
 class ShopsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :set_shop_scope
 
   def show
-    @shop = current_user.shops.find(params[:id])
+    @shop = @shop_scope.find(params[:id])
   end
 
   def index
-    @shops = current_user.shops
+    @shops = @shop_scope
   end
 
   def new
@@ -15,5 +15,11 @@ class ShopsController < ApplicationController
 
   def create
 
+  end
+
+  private
+
+  def set_shop_scope
+    @shop_scope = current_user.admin? ? Shop : current_user.shops
   end
 end

@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :shops
-    resources :barbers
-    resources :bookings
   end
 
   devise_for :users, controllers: { sessions: 'sessions', registrations: 'registrations' }
