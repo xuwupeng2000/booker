@@ -1,0 +1,265 @@
+$btn-line-height: 1.15rem;
+$input-line-height: 1.25rem;
+$input-height: 1.5rem;
+$font-size-base: 0.85rem;
+$font-family-sans-serif:  "Lato";
+$input-padding-y: 0.125rem;
+$input-padding-x: 0.125rem;
+$card-border-radius: .125rem;
+$card-border-width: 1px;
+$input-border-radius: .125rem;
+$modal-lg: 76rem;
+
+@import "~bootstrap/scss/bootstrap";
+@import "~tachyons";
+@import "~tachyons";
+@import "~tachyons-word-break";
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+
+@import "colors";
+@import "chosen-js";
+@import "sortble.css";
+
+.container {
+  width: 1140px !important;
+}
+
+label {
+  display: block;
+  margin-bottom: .125rem;
+  margin-top: 1rem;
+}
+
+.simple_form {
+  input.number, input.string, input.text {
+    padding: 0.3rem 0.5rem;
+    border: none;
+    width: 50%;
+    border-radius: 0.125rem;
+  }
+
+  .text-area {
+    padding: 0.3rem 0.5rem;
+    border: none;
+    width: 50%;
+    border-radius: 0.125rem;
+  }
+
+  .error {
+    color: #721c24;
+  }
+}
+
+h4 {
+  font-size: 0.975rem;
+  font-weight: bold;
+  margin-bottom: 1.25rem;
+}
+
+.bg-kpmg-blue {
+  background-color: $color-kpmg-blue;
+}
+
+.bg-production {
+  background-color: $color-kpmg-near-white;
+}
+
+.bg-kpmg-highlight-blue {
+  background-color: $color-kpmg-highlight-blue;
+}
+
+.bg-preprod {
+  background-color: $color-kpmg-preprod-white;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.pagy-nav.pagination {
+  .page {
+    padding: 1rem;
+  }
+}
+
+.job-progress-indicator {
+  width: 1.45rem;
+  height: 1.45rem;
+  z-index: 3;
+}
+
+#top-nav {
+  a:hover {
+    color: white;
+  }
+}
+
+#moon-line {
+  position: absolute;
+  top: 3.95rem;
+  width: 95%;
+}
+
+#moon-line-sub {
+  position: absolute;
+  top: 3.95rem;
+  width: 80%;
+}
+
+#moon-line-sub-2l {
+  position: absolute;
+  top: 5.25rem;
+  width: 80%;
+}
+
+.no-pointer-event {
+  pointer-events: none;
+}
+
+.avatar {
+  img {
+    border-radius: 100%;
+  }
+}
+
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.alert {
+  padding: 12px 20px;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+  font-weight: bold;
+}
+
+.alert.success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert.notice {
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+
+.alert.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  z-index: 1050;
+}
+
+.bg-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.row-error {
+  color: #721c24;
+}
+
+.lane-container {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.lane-header {
+  margin-right: -1rem;
+  margin-left: -1rem;
+}
+
+.health-status.excellent {
+  color: #d4edda;
+  background-color: #d4edda;
+}
+
+.health-status.concerning {
+  color: #f8d7da;
+  background-color: #f8d7da;
+}
+
+.health-status.normal {
+  color: #fff3cd;
+  background-color: #fff3cd;
+}
+
+.health-status.no-hp {
+  color: #CCCCCC;
+  background: #F4F4F4;
+}
+
+.unqualified-count-box {
+  height: 255px;
+}
+
+.count-box {
+  position: absolute;
+  top: 7.75rem;
+  right: 55%;
+}
+
+.stats-box {
+  height: 24.25rem !important;
+}
+
+.w-15 {
+  width: 15%;
+}
+
+.stage-status {
+  height: 7.25rem;
+}
+
+.table {
+  tr:hover {
+    background-color: #E3EFF9 !important;
+  }
+  .odd {
+    background-color: white !important;
+  }
+  .even {
+    background-color: #F8F9FA !important;
+  }
+}
+
+.table th, .table td {
+  border: none;
+}
+
+.kpmg-logo {
+  width: 12rem;
+}
+
+.pagination {
+  a, span, em {
+    padding: 0.2em 0.3em;
+  }
+}
+
+.modal {
+  top: 2rem;
+}
+
+#out_of_scope_item_description, #out_of_scope_item_fee_narration {
+  width: 100%;
+}
+
+.new_configurable_link, .edit_configurable_link {
+  .select, .text {
+    width: 50%;
+  }
+}
+
+.simple_form .error {
+  padding-left: 0.25rem;
+}

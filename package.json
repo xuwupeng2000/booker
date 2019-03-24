@@ -1,5 +1,26 @@
 {
   "name": "booker",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "bootstrap": "4.0.0",
+    "chart.js": "^2.7.2",
+    "chartkick": "^3.0.0",
+    "chosen-js": "^1.8.7",
+    "flatpickr": "^4.5.4",
+    "flow-typed": "^2.4.0",
+    "jquery": "^3.3.1",
+    "jquery-ujs": "^1.2.2",
+    "local-time": "^2.0.1",
+    "popper.js": "^1.14.3",
+    "react-dom": "^16.4.1",
+    "star-rating-svg": "^3.5.0",
+    "stimulus": "^1.1.1",
+    "tablesort": "^5.1.0",
+    "tachyons": "^4.10.0",
+    "tachyons-word-break": "^3.0.4"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
 }

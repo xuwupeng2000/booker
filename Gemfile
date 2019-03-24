@@ -16,9 +16,6 @@ gem 'aasm'
 
 gem 'hashie'
 gem 'jbuilder', '~> 2.5'
-gem 'jquery-rails'
-gem 'react-rails'
-gem 'turbolinks', '~> 5'
 
 gem 'formtastic', '~> 3.0'
 gem 'simple_form'
@@ -41,8 +38,7 @@ gem 'omniauth-facebook'
 gem 'fast_jsonapi'
 gem 'money-rails', '~>1.12'
 
-gem 'bootstrap', '~> 4.3.1'
-gem 'octicons_helper'
+gem 'webpacker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
