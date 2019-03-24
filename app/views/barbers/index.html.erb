@@ -19,7 +19,7 @@
         <tr>
           <td><%= b.name %></td>
           <td><%= b.description %></td>
-          <td><%= link_to b.shop.name, admin_shop_path(b.shop) %></td>
+          <td><%= b.shop.name %></td>
           <td><%= link_to "View", shop_barber_path(@shop, b) %></td>
         </tr>
       <% end %>
